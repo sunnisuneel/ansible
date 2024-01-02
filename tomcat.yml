@@ -23,6 +23,10 @@
       ansible.builtin.get_url:
         url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/bin/apache-tomcat-10.1.17.tar.gz
         dest: /tmp/apache-tomcat-10.1.17
+    - name: addd directory
+      ansible.builtin.file:
+        path: /opt/tomcat
+        state: directory    
     - name: extract tomcat tar file
       ansible.builtin.unarchive:
         src: /tmp/apache-tomcat-10.1.17
