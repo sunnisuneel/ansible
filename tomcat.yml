@@ -18,4 +18,14 @@
         state: present 
         home: /opt/tomcat
         shell: /bin/false  
+    - name: download tomcat
+      ansible.builtin.get_url:
+        url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/bin/apache-tomcat-10.1.17.tar.gz
+        dest: /tmp
+    - name: extract tomcat
+      ansible.builtin.unarchive:
+        src: /tmp
+        dest: /opt/tomcat
+        remote_src: yes
+
             
