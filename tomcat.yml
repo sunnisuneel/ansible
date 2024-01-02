@@ -21,11 +21,11 @@
     - name: download tomcat
       ansible.builtin.get_url:
         url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/bin/apache-tomcat-10.1.17.tar.gz
-        dest: /tmp
+        dest: /tmp/tomcat/apache-tomcat-10.1.17
     - name: extract tomcat
       ansible.builtin.unarchive:
-        src: /tmp
-        dest: /opt/tomcat
+        src: /tmp/tomcat/apache-tomcat-10.1.17
+        dest: /opt/tomcat/apache-tomcat-10.1.17
         remote_src: yes
 
             
