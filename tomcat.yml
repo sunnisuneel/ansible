@@ -15,9 +15,10 @@
     - name: creating tomcat user     
       ansible.builtin.user:
         name: tomcat
-        state: present 
+        create_home: true
         home: /opt/tomcat
-        shell: /bin/false  
+        shell: /bin/false
+        state: present   
     - name: download tomcat
       ansible.builtin.get_url:
         url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/bin/apache-tomcat-10.1.17.tar.gz
