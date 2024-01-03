@@ -19,14 +19,14 @@
         home: /opt/tomcat
         shell: /bin/false
         state: present   
+    - name: create a opt directory
+      ansible.builtin.file:
+        path: /opt/tomcat
+        state: directory      
     - name: download tomcat
       ansible.builtin.get_url:
         url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/bin/apache-tomcat-10.1.17.tar.gz
-        dest: /tmp/apache-tomcat-10.1.17
-    - name: create a opt/tomcat directory
-      ansible.builtin.file:
-        path: /opt/tomcat
-        state: directory    
+        dest: /tmp/apache-tomcat-10.1.17   
     - name: extract tomcat tar file
       ansible.builtin.unarchive:
         src: /tmp/apache-tomcat-10.1.17
