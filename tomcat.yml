@@ -18,11 +18,7 @@
         create_home: true
         home: /opt/tomcat
         shell: /bin/false
-        state: present   
-    - name: create a opt directory
-      ansible.builtin.file:
-        path: /opt/tomcat1
-        state: directory      
+        state: present      
     - name: download tomcat
       ansible.builtin.get_url:
         url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/bin/apache-tomcat-10.1.17.tar.gz
