@@ -11,3 +11,6 @@
     - name: debug variable
       ansible.builtin.debug:
         var: purpose  
+    - name: inventory file name
+      ansible.builtin.debug:
+        var: inventory_file    
