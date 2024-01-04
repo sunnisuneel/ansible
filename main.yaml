@@ -2,7 +2,7 @@
 -name: installing utilities
 hosts: all 
 tasks:
-  - name: install utilities
+  - name: install utilitiess
     ansible.builtin.package:
       name: "{{ item }}"
       state: present
