@@ -1,0 +1,10 @@
+---
+all: 
+  children:
+    local:
+      hosts:
+        localhost:
+          packages:
+            - git
+            - tree
+            - nano
