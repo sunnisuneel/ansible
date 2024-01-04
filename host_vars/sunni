@@ -1,6 +1,6 @@
 ---
 ansible_host: localhost
-package:
+packages:
   - git
   - tree
   - nano
