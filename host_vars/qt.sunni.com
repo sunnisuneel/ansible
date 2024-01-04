@@ -2,5 +2,5 @@
 ansible_host: localhost
   package:
     - git
-   - tree
-   - nano
+    - tree
+    - nano
