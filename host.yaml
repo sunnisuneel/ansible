@@ -3,5 +3,7 @@ all:
   children:
     local:
       hosts:
+        localhost:
+        sunni:
         
           
