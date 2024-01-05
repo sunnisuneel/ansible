@@ -7,27 +7,28 @@
       ansible.builtin.apt:
         name: openjdk-11-jdk
         update_cache: yes
-        state: present 
+        state: present
     - name: creating tomcat group
       ansible.builtin.group:
         name: tomcat
         state: present
-    - name: creating tomcat user     
+    - name: creating tomcat user
       ansible.builtin.user:
         name: tomcat
-        create_home: true
+        create_home: yes
         home: /opt/tomcat
         shell: /bin/false
-        state: present      
-    - name: download tomcat
-      ansible.builtin.get_url:
-        url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/bin/apache-tomcat-10.1.17.tar.gz
-        dest: /tmp/apache-tomcat-10.1.17   
+        state: present
     - name: extract tomcat tar file
       ansible.builtin.unarchive:
-        src: /tmp/apache-tomcat-10.1.17
-        dest: /opt/tomcat1/apache-tomcat-10.1.17
+        src: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/src/apache-tomcat-10.1.17-src.tar.gz
+        dest: /opt/tomcat
         remote_src: yes
+    - nmae: creating symbolic link
+      ansible.builtin.file:
+        src: /opt/tomcat
+        dest: /opt/tomcat/latest
+        state: link    
         
 
             
